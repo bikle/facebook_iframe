@@ -1,0 +1,5 @@
+echo 'rvm list'
+echo 'rvm gemdir'
+echo 'rvmbc'
+
+script/server -p 3331 --debugger
