@@ -1,0 +1,24 @@
+
+development:
+  api_key: 6f4c403911285aa163175607730290ac
+  secret_key: dfcaa89388d664fee714acb3be60d621
+  canvas_page_name: iiframeone
+  callback_url: http://businessconnect.homeip.net:3331/
+  pretty_errors: true
+  set_asset_host_to_callback_url: true
+
+cucumber:
+  api_key: 6f4c403911285aa163175607730290ac
+  secret_key: dfcaa89388d664fee714acb3be60d621
+  canvas_page_name: iiframeone
+  callback_url: http://businessconnect.homeip.net:3331/
+  pretty_errors: true
+  set_asset_host_to_callback_url: true
+
+test:
+  api_key: 6f4c403911285aa163175607730290ac
+  secret_key: dfcaa89388d664fee714acb3be60d621
+  canvas_page_name: iiframeone
+  callback_url: http://businessconnect.homeip.net:3331/
+  pretty_errors: true
+  set_asset_host_to_callback_url: true
