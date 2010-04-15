@@ -1,0 +1,13 @@
+log/cucumber.log
+log/development.log
+vendor/gems/mysql-2.7/Makefile
+vendor/gems/mysql-2.7/lib/*
+vendor/gems/mysql-2.7/mkmf.log
+vendor/gems/mysql-2.7/mysql.c
+vendor/gems/mysql-2.7/mysql.o
+vendor/gems/mysql-2.7/mysql.so
+log/newrelic_agent.log
+vendor/gems/mysql-2.7/conftest.dSYM/*
+vendor/gems/mysql-2.7/gem_make.out
+vendor/gems/mysql-2.7/mysql.bundle
+.DS_Store
