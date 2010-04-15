@@ -1,23 +1,29 @@
-== This is the Bikle Facebook IFrame Demo
+This is the Bikle Facebook IFrame Demo.
+
 I use this demo as a "starter kit" when I begin work on a new Facebook IFrame app.
 
 Here is a checklist I follow to run this on my Mac (OS/X 10.5.8):
 
 - Check that I am running ruby 1.8.7
 - Check that I am running Rails 2.3.5
-- git clone this software to my Mac
-- Create a new Facebook Application using the wizard here:
+- I git clone this software to my Mac
+- I Create a new Facebook Application using the wizard here:
   - http://www.facebook.com/developers/apps.php
   - Use the screendumps in public/images/ to guide me through the wizard
-- Edit these files:
+- I Edit these files:
   - config/database.yml
   - config/facebooker.yml
-- Establish an ssh-tunnel between my Mac and a server on the net:
+- I Establish an ssh-tunnel between my Mac and a server on the net:
   - demo shell command: 
     ssh -nNt -g -R :3331:0.0.0.0:3331 bikle@bikle.net
-- Start rails:
+- I Start rails:
   - script/s3331
 - I then try this URL:
   - http://localhost:3331/hello/world
 - I then see something like this:
   - public/images/hello_world.png
+-I add hello/world to the end of my app URL:
+  - public/images/hello_world2.png
+
+If I see something like the above image, 
+I am confident that my Rails server is correctly serving IFrame content to my Facebook App.
