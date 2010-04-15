@@ -11,3 +11,4 @@ vendor/gems/mysql-2.7/conftest.dSYM/*
 vendor/gems/mysql-2.7/gem_make.out
 vendor/gems/mysql-2.7/mysql.bundle
 .DS_Store
+vendor/plugins/facebooker/.config
