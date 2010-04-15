@@ -9,7 +9,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
   config.active_record.colorize_logging = false
   config.gem "haml"
-  config.gem "mysql",  :version => '2.7'
   config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
   config.time_zone = 'UTC'
 end
