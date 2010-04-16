@@ -15,3 +15,6 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+# Nice javascript links at bottom of pages
+config.gem 'rails-footnotes', :lib => 'rails-footnotes', :source => 'http://gemcutter.org', :version => '>=3.6.3'
