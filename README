@@ -32,8 +32,7 @@ Here is a checklist I follow to run this on my Mac (OS/X 10.5.8):
   - script/s3331
 - I then try my app URL
 - I then see something like this:
-  - public/images/hello_world2.png:
-    - http://github.com/bikle/facebook_iframe/blob/master/public/images/hello_world2.png
+  - http://github.com/bikle/facebook_iframe/blob/master/public/images/hello_world2.png
 
 If I see something like the above image, 
 I am confident that my Rails server is correctly serving IFrame content to my Facebook App.
