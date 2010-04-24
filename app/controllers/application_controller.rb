@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     @application_base_url = 'http://apps.facebook.com/' + @canvas_page_name
     @api_key              = @facebooker_config['api_key']
     @ajax_server          = "#{Facebooker::AdapterBase.facebooker_config['callback_url']}"
+    @facebook_session     = facebook_session
   end
 
 end

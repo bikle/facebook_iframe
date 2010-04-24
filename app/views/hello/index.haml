@@ -1,4 +1,4 @@
-%h1 index.haml
+%h1 app/views/hello/index.haml
 %hr/
 %a(href="#{@application_base_url}/hello/index" target="t2")
   ="#{@application_base_url}/hello/index"
@@ -8,6 +8,10 @@
 %a(href="#{@application_base_url}/hello/world" target="t2")="#{@application_base_url}/hello/world"
 %br/
 %br/
+%a(href="#{@application_base_url}/hello/permissions" target="t2")="#{@application_base_url}/hello/permissions"
+%br/
+%br/
 %a(href="#{@application_base_url}/hello/jquery_accordian" target="t2")="#{@application_base_url}/hello/jquery_accordian"
 %hr/
 
+= debug @facebook_session.user.friends

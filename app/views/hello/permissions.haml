@@ -1,0 +1,34 @@
+%h1 app/views/hello/permissions.haml
+
+The links below bring up dialogs which ask you to grant some permissions.
+If you are worried about your privacy do not click the links.
+%br/
+Another option is to create a dummy account and click the links from that account.
+
+%hr/
+
+%fb:serverFbml(style="width: 100px;")
+  %script(type="text/fbml")
+    %fb:fbml
+      %fb:prompt-permission(perms="offline_access")
+        Grant Offline Access
+
+%hr/
+
+%fb:serverFbml(style="width: 100px;")
+  %script(type="text/fbml")
+    %fb:fbml
+      %fb:prompt-permission(perms="read_stream,publish_stream")
+        Grant permission for read_stream and publish_stream
+
+%hr/
+  
+%fb:prompt-permission(perms="offline_access")
+  Grant Offline Access
+
+%hr/
+      
+%fb:prompt-permission(perms="read_stream,publish_stream")
+  Grant permission for read_stream and publish_stream
+
+%hr/

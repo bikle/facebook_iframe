@@ -1,8 +1,20 @@
 !!! Strict
-%html{ "xmlns:fb" => "http://www.facebook.com/2008/fbml", :xmlns => "http://www.w3.org/1999/xhtml" }
+
+%html{html_attrs('en-US'), 'xmlns:fb' => "http://www.facebook.com/2008/fbml"}
   %head
     %link(href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css")
     %script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript")
     %script(src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js" type="text/javascript")
   %body
     = yield
+
+    %script(src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript")
+    %script(type="text/javascript")
+      window.onload = function () {
+      FB_RequireFeatures(
+      ["XFBML"], 
+      function(){ 
+      FB.Facebook.init("#{Facebooker::AdapterBase.facebooker_config['api_key']}", "/xd_receiver.htm");
+      }
+      );
+      }
