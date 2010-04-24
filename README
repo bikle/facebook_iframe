@@ -6,11 +6,11 @@ Here is a checklist I follow to run this on my Mac (OS/X 10.5.8):
 
 - Check that I am running ruby 1.8.7
 - Check that I am running Rails 2.3.5
-- I git clone this software to my Mac
+- I git clone this software (the software you are looking at) to my Mac
 - I Create a new Facebook Application using the wizard here:
   - http://www.facebook.com/developers/apps.php
 
-  - Use the screendumps in public/images/ to guide me through the wizard:
+  - Use the screendumps in public/images/ to guide me through the FB wizard:
     - http://github.com/bikle/facebook_iframe/blob/master/public/images/basic.png
     - http://github.com/bikle/facebook_iframe/blob/master/public/images/authentication.png
     - http://github.com/bikle/facebook_iframe/blob/master/public/images/profiles.png
@@ -25,12 +25,16 @@ Here is a checklist I follow to run this on my Mac (OS/X 10.5.8):
     - http://github.com/bikle/facebook_iframe/blob/master/config/database.yml
   - config/facebooker.yml:
     http://github.com/bikle/facebook_iframe/blob/master/config/facebooker.demo.yml
+
 - I Establish an ssh-tunnel between my Mac and a server on the net:
   - demo shell command: 
     ssh -nNt -g -R :3331:0.0.0.0:3331 bikle@bikle.net
+
 - I Start rails:
   - script/s3331
+
 - I then try my app URL
+
 - I then see something like this:
   - http://github.com/bikle/facebook_iframe/blob/master/public/images/hello_world2.png
 
