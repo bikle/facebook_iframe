@@ -1,0 +1,11 @@
+// app/views/hello/_jq_toggle_fbssn.haml
+
+:javascript
+  $(document).ready(function() {
+    $("a#debug_facebook_session").click(function() {
+      $('#debug_facebook_session_div').toggle();
+    });
+  })
+%a(href="#content" id="debug_facebook_session")jQuery toggle of: debug @facebook_session
+#debug_facebook_session_div(style="display: none;")
+  = debug @facebook_session
