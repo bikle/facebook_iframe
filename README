@@ -18,11 +18,8 @@ Here is a checklist I follow to run this on my Mac (OS/X 10.5.8):
     ssh -nNt -g -R :3331:0.0.0.0:3331 bikle@bikle.net
 - I Start rails:
   - script/s3331
-- I then try this URL:
-  - http://localhost:3331/hello/world
+- I then try my app URL
 - I then see something like this:
-  - public/images/hello_world.png
--I add hello/world to the end of my app URL:
   - public/images/hello_world2.png
 
 If I see something like the above image, 
