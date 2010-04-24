@@ -1,0 +1,14 @@
+// app/views/hello/_jq_toggle_fbssnu.haml
+
+:javascript
+  $(document).ready(function() {
+    $("a#debug_facebook_session_u").click(function() {
+      $('#debug_facebook_session_u_div').toggle();
+    });
+  })
+%a(href="#content" id="debug_facebook_session_u")jQuery toggle of: debug @facebook_session.user
+#debug_facebook_session_u_div(style="display: none;")
+  For FB IFrame Apps note that friends array is empty.  We need to get our friends from FQL.
+  For FBML Apps, the friends array is filled for us.
+  %br/
+  = debug @facebook_session.user
