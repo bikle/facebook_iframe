@@ -9,10 +9,22 @@ Here is a checklist I follow to run this on my Mac (OS/X 10.5.8):
 - I git clone this software to my Mac
 - I Create a new Facebook Application using the wizard here:
   - http://www.facebook.com/developers/apps.php
-  - Use the screendumps in public/images/ to guide me through the wizard
+
+  - Use the screendumps in public/images/ to guide me through the wizard:
+    - http://github.com/bikle/facebook_iframe/blob/master/public/images/basic.png
+    - http://github.com/bikle/facebook_iframe/blob/master/public/images/authentication.png
+    - http://github.com/bikle/facebook_iframe/blob/master/public/images/profiles.png
+    - http://github.com/bikle/facebook_iframe/blob/master/public/images/canvas.png
+    - http://github.com/bikle/facebook_iframe/blob/master/public/images/connect.png
+    - http://github.com/bikle/facebook_iframe/blob/master/public/images/widgets.png
+    - http://github.com/bikle/facebook_iframe/blob/master/public/images/advanced.png
+    - http://github.com/bikle/facebook_iframe/blob/master/public/images/migrations.png
+
 - I Edit these files:
-  - config/database.yml
-  - config/facebooker.yml
+  - config/database.yml:
+    - http://github.com/bikle/facebook_iframe/blob/master/config/database.yml
+  - config/facebooker.yml:
+    http://github.com/bikle/facebook_iframe/blob/master/config/facebooker.demo.yml
 - I Establish an ssh-tunnel between my Mac and a server on the net:
   - demo shell command: 
     ssh -nNt -g -R :3331:0.0.0.0:3331 bikle@bikle.net
@@ -20,7 +32,8 @@ Here is a checklist I follow to run this on my Mac (OS/X 10.5.8):
   - script/s3331
 - I then try my app URL
 - I then see something like this:
-  - public/images/hello_world2.png
+  - public/images/hello_world2.png:
+    - http://github.com/bikle/facebook_iframe/blob/master/public/images/hello_world2.png
 
 If I see something like the above image, 
 I am confident that my Rails server is correctly serving IFrame content to my Facebook App.
