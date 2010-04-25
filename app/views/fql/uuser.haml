@@ -1,1 +1,49 @@
 %h1 app/views/fql/user.haml
+%br/
+This is a simple demo which sends a query to the FQL table named "user".
+%br/
+Note that it is difficult to search an FQL table like you can a normal database table.
+%br/
+You usually need to know what the value of the primary key is.
+%br/
+For example, you cannot issue a query like this:
+%br/
+%br/
+SELECT name FROM user WHERE name > "Bob Smith"
+%br/
+%br/
+Anyway,
+Here is the query behind this demo:
+%br/
+%br/
+=@fql_query
+%br/
+%br/
+Here is the call of the query:
+%br/
+@qry_output= @facebook_session.fql_query(fql_query).first
+%br/
+%br/
+Here is the output in yaml format:
+%br/
+=debug @qry_output
+%hr/
+%br/
+%br/
+With Rails it is easy to transform the query output into HTML elements.
+%br/
+%br/
+For example we can create an a-element from @qry_output.profile_url and @qry_output.name:
+%br/
+%br/
+%a(target="u" href="#{@qry_output.profile_url}")=@qry_output.name
+%br/
+%br/
+We can create an a-element from @qry_output.profile_url and @qry_output.pic_square:
+%br/
+%br/
+%a(target="u" href="#{@qry_output.profile_url}")
+  %img(src="#{@qry_output.pic_square}")
+%br/
+%br/
+%hr/
