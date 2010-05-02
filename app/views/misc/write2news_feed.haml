@@ -1,1 +1,11 @@
 %h1 write2news_feed.haml
+- if @facebooker_session_permissionerror
+  %hr/
+  %style(type="text/css")
+    div.error_text {font-size:1.2em; font-weight:bold; color: red;}
+  .error_text
+    We have a Facebooker::Session::PermissionError.  We can fix this error by going to this URL:
+    %br/
+    %a(target="_top" href="http://apps.facebook.com/#{@canvas_page_name}/hello/permissions")
+      http://apps.facebook.com/#{@canvas_page_name}/hello/permissions
+  %hr/
