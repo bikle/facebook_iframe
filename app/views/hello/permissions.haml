@@ -1,9 +1,13 @@
 %h1 app/views/hello/permissions.haml
 
 The links below bring up dialogs which ask you to grant some permissions.
-If you are worried about your privacy do not click the links.
 %br/
-Another option is to create a dummy account and click the links from that account.
+%style(type="text/css")
+  div.bold_green_text {font-size:1.2em; font-weight:bold; color: green;}
+.bold_green_text
+  If you are worried about your privacy do not click the links.
+%br/
+Instead, create a test account and click the links from that account.
 %hr/
   
 %fb:prompt-permission(perms="offline_access")
