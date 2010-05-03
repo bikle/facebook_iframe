@@ -1,11 +1,12 @@
 class MiscController < ApplicationController
-  def write2news_feed
-debugger
 
+  def index
+  end
+
+  def write2news_feed
     # fb:multi-friend-input gives us params["ids"].
     # If params["ids"] is nil, just return.  This just shows the form.
     return if params["ids"].nil?
-
     # Get my id from facebook_session
     fbuid= facebook_session.user.uid
     fb_sender= Facebooker::User.new(fbuid)
@@ -23,7 +24,6 @@ debugger
     rescue Facebooker::Session::PermissionError
       @facebooker_session_permissionerror= true
     end # begin, rescue
-
   end # def write2news_feed
 
 end # class MiscController
