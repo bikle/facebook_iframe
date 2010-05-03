@@ -1,13 +1,12 @@
 %h1 app/views/hello/index.haml
 %hr/
-%a(href="#{@application_base_url}/hello/world" target="t2")="#{@application_base_url}/hello/world"
+%a(href="#{@application_base_url}/hello/world" target="_top")="#{@application_base_url}/hello/world"
 %br/
 %br/
-%a(href="#{@application_base_url}/hello/permissions" target="t2")="#{@application_base_url}/hello/permissions"
+%a(href="#{@application_base_url}/hello/permissions" target="_top")="#{@application_base_url}/hello/permissions"
 %br/
 %br/
-%a(href="#{@application_base_url}/hello/jquery_accordian" target="t2")="#{@application_base_url}/hello/jquery_accordian"
-%br/
+%a(href="/hello/jquery_accordian" target="_top")="#{@application_base_url}/hello/jquery_accordian"
 %br/
 // jQuery toggle of: debug @facebook_session
 =render :partial => "jq_toggle_fbssn"
