@@ -8,7 +8,10 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   filter_parameter_logging :fb_sig_friends
-  before_filter :ensure_application_is_installed_by_facebook_user
+  # During development activity when facebook.com is slow,
+  # Comment the next line if I want to connect my browser directly to the callback URL.
+  # before_filter :ensure_application_is_installed_by_facebook_user
+  before_filter :ensure_authenticated_to_facebook
   before_filter :facebook_variables
 
   # Define some useful variables
