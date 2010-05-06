@@ -24,6 +24,11 @@
       ["XFBML"], 
       function(){ 
       FB.Facebook.init("#{Facebooker::AdapterBase.facebooker_config['api_key']}", "/xd_receiver.htm");
-      }
-      );
+      });
+      FB_RequireFeatures(
+      ["CanvasUtil"],
+      function(){
+      FB.XdComm.Server.init("/xd_receiver.htm");
+      FB.CanvasClient.startTimerToSizeToContent();
+      });
       }
