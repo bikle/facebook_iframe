@@ -15,4 +15,13 @@ class FqlController < ApplicationController
     @qry_output= @facebook_session.fql_query(@fql_query).first
   end
 
+  # Sends a simple query to the FQL table named "friend".
+  def ffriend
+    @fql_query= "SELECT uid2 FROM friend WHERE uid1 = #{@facebook_session.user.uid} ORDER BY uid2"
+    # fql_query() returns an array.  
+    @qry_output= @facebook_session.fql_query(@fql_query)
+    @fq2= "SELECT name, pic_square, profile_url, username, website, is_blocked, email FROM user WHERE uid IN (#{@fql_query}) ORDER BY uid"
+    @qo2= @facebook_session.fql_query(@fq2)
+  end
+
 end

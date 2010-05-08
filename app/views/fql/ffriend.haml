@@ -1,0 +1,64 @@
+%h1 app/views/fql/friend.haml
+
+:javascript
+  $(document).ready(function() {
+    $("#accordion").accordion({ collapsible: true, autoHeight: false });
+  });
+
+%br/
+This page shows 2 examples of an FQL query against the FQL table named "friend".
+%br/
+
+#accordion
+  %h3
+    %a{ :href => "#" }
+      FQL Query of Example 1
+  %div
+    %span.bold_span=@fql_query
+    %br/
+    %br/
+    Here is the call of the query:
+    %br/
+    %span.bold_span @qry_output= @facebook_session.fql_query(fql_query)
+  %h3
+    %a{ :href => "#" }
+      FQL Query Output (in YAML) of Example 1
+  %div
+    Here is the output in yaml format:
+    %br/
+    =debug @qry_output
+  %h3
+    %a{ :href => "#" }
+      FQL Query Output of Example 1 Transformed into HTML
+  %div
+    With Rails it is easy to transform the query output into HTML elements:
+    %br/
+    %ul
+      - @qry_output.each do |qor|
+        %li
+          %a(target="u" href="http://www.facebook.com/profile.php?id=#{qor["uid2"]}")="http://www.facebook.com/profile.php?id=#{qor["uid2"]}"
+  %h3
+    %a{ :href => "#" }
+      FQL Query of Example 2
+  %div
+    Since FQL is similar to SQL it is natural to try and join tables in a query.
+    %br/
+
+    SQL allows us two general ways to join tables.  We specify all the join tables in the FROM clause or we specify one or more join tables in the IN predicate.
+    FQL requires that we declare only one FQL table in the FROM clause.
+    Here is some FQL syntax which demonstrates a join of the FQL table named "user" with the FQL table named "friend".
+    
+    %br/
+    %br/
+    %span.bold_span=@fq2
+  %h3
+    %a{ :href => "#" }
+      FQL Query Output of Example 2 Transformed into HTML
+  %div
+    With Rails it is easy to transform the query output into HTML elements: 
+    %ul
+      - @qo2.each do |qor|
+        %li
+          %a(target="u" href="#{qor.profile_url}")
+            %img(src="#{qor.pic_square}")
+          %a(target="u" href="#{qor.profile_url}")=qor.name

@@ -6,6 +6,7 @@
     %script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript")
     %script(src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js" type="text/javascript")
   %body
+    =render :partial => "layouts/some_css"
     %hr/
     %a(target="g" href="http://github.com/bikle/facebook_iframe")README on github.com
     %br/
@@ -16,7 +17,6 @@
     %a(target="_top" href="/misc/index") app/views/misc/index.haml
     %hr/
     = yield
-
     %script(src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript")
     %script(type="text/javascript")
       window.onload = function () {
@@ -25,10 +25,10 @@
       function(){ 
       FB.Facebook.init("#{Facebooker::AdapterBase.facebooker_config['api_key']}", "/xd_receiver.htm");
       });
-      FB_RequireFeatures(
-      ["CanvasUtil"],
-      function(){
-      FB.XdComm.Server.init("/xd_receiver.htm");
-      FB.CanvasClient.startTimerToSizeToContent();
-      });
+      // FB_RequireFeatures(
+      // ["CanvasUtil"],
+      // function(){
+      // FB.XdComm.Server.init("/xd_receiver.htm");
+      // FB.CanvasClient.startTimerToSizeToContent();
+      // });
       }
