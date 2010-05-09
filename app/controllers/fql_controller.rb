@@ -24,4 +24,10 @@ class FqlController < ApplicationController
     @qo2= @facebook_session.fql_query(@fq2)
   end
 
+  def tst
+    @mfq1= "SELECT uid2 FROM friend WHERE uid1 = #{@facebook_session.user.uid} ORDER BY uid2"
+    @mfq2= "SELECT uid2 FROM friend WHERE uid1 IN (#{@mfq1}) ORDER BY uid2"
+    @mfq2o= @facebook_session.fql_query(@mfq2)
+  end
+
 end

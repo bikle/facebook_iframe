@@ -1,6 +1,7 @@
 class HelloController < ApplicationController
   def index
-  end
+    set_scrollbar
+  end # def index
 
   def world
   end

@@ -5,14 +5,13 @@
     $("#accordion").accordion({ collapsible: true, autoHeight: false });
   });
 
-%br/
-This page shows 2 examples of an FQL query against the FQL table named "friend".
+This page shows examples of FQL queries against the FQL table named "friend".
 %br/
 
 #accordion
   %h3
     %a{ :href => "#" }
-      FQL Query of Example 1
+      FQL Example Query 1
   %div
     %span.bold_span=@fql_query
     %br/
@@ -39,7 +38,7 @@ This page shows 2 examples of an FQL query against the FQL table named "friend".
           %a(target="u" href="http://www.facebook.com/profile.php?id=#{qor["uid2"]}")="http://www.facebook.com/profile.php?id=#{qor["uid2"]}"
   %h3
     %a{ :href => "#" }
-      FQL Query of Example 2
+      FQL Example Query 1
   %div
     Since FQL is similar to SQL it is natural to try and join tables in a query.
     %br/
@@ -62,3 +61,50 @@ This page shows 2 examples of an FQL query against the FQL table named "friend".
           %a(target="u" href="#{qor.profile_url}")
             %img(src="#{qor.pic_square}")
           %a(target="u" href="#{qor.profile_url}")=qor.name
+
+  %h3
+    %a{ :href => "#" }
+      FQL Example Query 3
+  %div
+    An obvious FQL query to try is get a list of all friends of all my friends:
+    %br/
+    %br/
+    - mfq1= "SELECT uid2 FROM friend WHERE uid1 = #{@facebook_session.user.uid}"
+    - mfq2= "SELECT uid2 FROM friend WHERE uid1 IN (#{mfq1})"
+    %span.bold_span=mfq2
+    %br/
+    That FQL query, however, gives an error:
+    %br/
+    %br/
+    %span.bold_red_span Can't lookup all friends of 1241409; can only lookup for the logged in user (100000697159002) or for pairs of users
+    %br/
+    %br/
+    Obtaining a list of all friends of all my friends should be possible using ordinary screen scraping technology like Hpricot combined with OpenURI.
+    For example if you go to
+    %br/
+    %br/
+    %a(target="a" href="http://hpricot.com")http://hpricot.com
+    %br/
+    %br/
+    And give it this URL:
+    %br/
+    %br/
+    %a(target="f" href="http://www.facebook.com/profile.php?id=100000697159002")
+      %span.bold_span http://www.facebook.com/profile.php?id=100000697159002
+    %br/
+    %br/
+    combined with this hpricot search expression:
+    %br/
+    %br/
+    %span.bold_span a[@rel*=friend]
+    %br/
+    %br/
+    you will get a partial list of friends for Facebook id=100000697159002
+    %br/
+    %br/
+    Here is a demo of using a GET against hpricot.com to get that list:
+    %br/
+    %br/
+    %a(target="h" href="http://hpricot.com/demos/search_map?uurl=http://www.facebook.com/profile.php%3Fid%3D100000697159002&searchexpr=a[%40rel*%3Dfriend]")
+      %span.bold_span http://hpricot.com/demos/search_map?uurl=http://www.facebook.com/profile.php%3Fid%3D100000697159002&searchexpr=a[%40rel*%3Dfriend]
+

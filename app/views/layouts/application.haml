@@ -10,11 +10,16 @@
     %hr/
     %a(target="g" href="http://github.com/bikle/facebook_iframe")README on github.com
     %br/
-    %a(target="_top" href="/hello/index") app/views/hello/index.haml
+    %a(target="_top" href="#{@application_base_url}/hello/index") app/views/hello/index.haml
     %br/
-    %a(target="_top" href="/fql/index") app/views/fql/index.haml
+    %a(target="_top" href="#{@application_base_url}/fql/index") app/views/fql/index.haml
     %br/
-    %a(target="_top" href="/misc/index") app/views/misc/index.haml
+    %a(target="_top" href="#{@application_base_url}/misc/index") app/views/misc/index.haml
+    %br/
+    Turn scrollbars
+    %a(target="_top" href="#{@application_base_url}/hello/index?scrollbar=on") On
+    |
+    %a(target="_top" href="#{@application_base_url}/hello/index?scrollbar=off") Off
     %hr/
     = yield
     %script(src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript")
@@ -25,10 +30,11 @@
       function(){ 
       FB.Facebook.init("#{Facebooker::AdapterBase.facebooker_config['api_key']}", "/xd_receiver.htm");
       });
-      // FB_RequireFeatures(
-      // ["CanvasUtil"],
-      // function(){
-      // FB.XdComm.Server.init("/xd_receiver.htm");
-      // FB.CanvasClient.startTimerToSizeToContent();
-      // });
+      - if @scrollbar== false
+        FB_RequireFeatures(
+        ["CanvasUtil"],
+        function(){
+        FB.XdComm.Server.init("/xd_receiver.htm");
+        FB.CanvasClient.startTimerToSizeToContent();
+        });
       }
