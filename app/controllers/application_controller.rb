@@ -23,16 +23,6 @@ class ApplicationController < ActionController::Base
     @ajax_server          = "#{Facebooker::AdapterBase.facebooker_config['callback_url']}"
     @facebook_session     = facebook_session
     @scrollbar            = session[:scrollbar]
-  end
-
-  def set_scrollbar
-    case
-    when params[:scrollbar]== "on"
-      @scrollbar= session[:scrollbar]= true
-    when params[:scrollbar]== "off"
-      @scrollbar= session[:scrollbar]= false
-    else
-    end # case
-  end # def set_scrollbar
+  end # def facebook_variables
 
 end # class
