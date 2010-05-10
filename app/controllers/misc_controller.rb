@@ -39,6 +39,8 @@ class MiscController < ApplicationController
     @my_html= my_html
   end # def jq_scrape
 
+  def jquery_accordion
+  end 
 
 end # class MiscController
 
