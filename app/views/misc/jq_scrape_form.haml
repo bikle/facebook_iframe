@@ -1,0 +1,8 @@
+%h1 app/views/misc/jq_scrape_form.haml
+%hr/
+-form_tag("/misc/jq_scrape") do
+  Enter a website you want to scrape for images ->
+  = text_field_tag("myurl","http://news.google.com", :size => 77)
+  %br/
+  = submit_tag("scrape images")
+

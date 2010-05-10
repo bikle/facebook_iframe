@@ -26,5 +26,19 @@ class MiscController < ApplicationController
     end # begin, rescue
   end # def write2news_feed
 
+  def jq_scrape_form
+  end 
+
+  def jq_scrape
+    require 'open-uri'
+    myurl= params[:myurl]
+    hdrs = {"User-Agent"=>"Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1", "Accept-Charset"=>"utf-8", "Accept"=>"text/html"}
+    my_html = ""
+    open(myurl, hdrs).each {|s| my_html << s}
+    # @my_html= my_html.sub(/.+<body/,'<body').sub(/<\/body>.+$/,'</body>')
+    @my_html= my_html
+  end # def jq_scrape
+
+
 end # class MiscController
 

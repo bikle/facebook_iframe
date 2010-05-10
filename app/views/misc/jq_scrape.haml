@@ -1,0 +1,10 @@
+// app/views/misc/jq_scrape.haml
+
+:javascript
+  $(document).ready(function() {
+    $("div#some_elems").append($("img"));
+  });
+  
+%div(style="display: none;")
+  =@my_html
+#some_elems
