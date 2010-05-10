@@ -4,19 +4,27 @@ This is an interesting demonstration.
 It starts by asking you for the URL of a webpage (which hopefully has many images).
 %br/
 %br/
-When you submit the URL, the form passes the URL to a Rails action named jq_scrape() in the controller named MiscController.
+When you submit the URL, the form (in 
+%a(target="g" href="http://github.com/bikle/facebook_iframe/blob/master/app/views/misc/jq_scrape_form.haml")jq_scrape_form.haml
+) passes the URL to a Rails action named jq_scrape() in the controller named 
+%a(target="g" href="http://github.com/bikle/facebook_iframe/blob/master/app/controllers/misc_controller.rb")MiscController.
 %br/
 %br/
-Then, jq_scrape() makes a call to OpenURI with the URL.
+Then, jq_scrape() makes a call to 
+%a(target="g" href="http://www.google.com/search?q=ruby+openuri")OpenURI
+with the URL.
 %br/
 %br/
-If the webserver for that page is well behaved, it will return a page of HTML.
+If the webserver for that page is well behaved, it will respond with HTML and close the connection.
 %br/
 %br/
-Once jq_scrape() receives that HTML it puts it into a variable named @my_html and passes @my_html to a view file named jq_scrape.haml
+Once jq_scrape() receives that HTML it puts it into a variable named @my_html and passes @my_html to a view file named
+%a(target="g" href="http://github.com/bikle/facebook_iframe/blob/master/app/views/misc/jq_scrape.haml")jq_scrape.haml
 %br/
 %br/
-Next, jq_scrape.haml copies @my_html into a div-element with id named: "fill_then_detach".
+Next, 
+
+copies @my_html into a div-element with id named: "fill_then_detach".
 %br/
 %br/
 You do not see this div rendered because I specify that it have a style of "display: none;".
@@ -28,9 +36,11 @@ Once div#fill_then_detach is filled with @my_html, jQuery springs into action.
 jQuery does two things:
 %ul
   %li
-    Copies img-elements from div#fill_then_detach into div#some_elems (which you should then see)
+    Copies img-elements from div#fill_then_detach into div#some_elems (which you should then see). More info:
+    %a(target="g" href="http://api.jquery.com/append/") jQuery append()
   %li
-    Performs the jQuery detach() function against div#fill_then_detach which detaches it from your browser
+    Performs the jQuery detach() function against div#fill_then_detach which detaches it from your browser:
+    %a(target="g" href="http://api.jquery.com/detach/") jQuery detach()
 
 %hr/
 -form_tag("/misc/jq_scrape") do
