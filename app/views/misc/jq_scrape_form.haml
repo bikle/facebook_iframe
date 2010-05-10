@@ -1,4 +1,37 @@
 %h1 app/views/misc/jq_scrape_form.haml
+This is an interesting demonstration.
+%br/
+It starts by asking you for the URL of a webpage (which hopefully has many images).
+%br/
+%br/
+When you submit the URL, the form passes the URL to a Rails action named jq_scrape() in the controller named MiscController.
+%br/
+%br/
+Then, jq_scrape() makes a call to OpenURI with the URL.
+%br/
+%br/
+If the webserver for that page is well behaved, it will return a page of HTML.
+%br/
+%br/
+Once jq_scrape() receives that HTML it puts it into a variable named @my_html and passes @my_html to a view file named jq_scrape.haml
+%br/
+%br/
+Next, jq_scrape.haml copies @my_html into a div-element with id named: "fill_then_detach".
+%br/
+%br/
+You do not see this div rendered because I specify that it have a style of "display: none;".
+%br/
+%br/
+Once div#fill_then_detach is filled with @my_html, jQuery springs into action.
+%br/
+%br/
+jQuery does two things:
+%ul
+  %li
+    Copies img-elements from div#fill_then_detach into div#some_elems (which you should then see)
+  %li
+    Performs the jQuery detach() function against div#fill_then_detach which detaches it from your browser
+
 %hr/
 -form_tag("/misc/jq_scrape") do
   Enter a website you want to scrape for images ->

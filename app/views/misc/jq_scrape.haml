@@ -3,8 +3,23 @@
 :javascript
   $(document).ready(function() {
     $("div#some_elems").append($("img"));
+    $("div#fill_then_detach").detach();
   });
   
-%div(style="display: none;")
+#fill_then_detach(style="display: none;")
   =@my_html
+
+%h1 app/views/misc/jq_scrape.haml
+This page contains a scrape of img-elements from this URL:
+%a(target="m" href="#{@myurl}")=@myurl
+%br/
+%br/
+
+-form_tag("/misc/jq_scrape") do
+  Enter a website you want to scrape for images ->
+  = text_field_tag("myurl","http://www.art.com", :size => 77)
+  %br/
+  = submit_tag("scrape images AGAIN!")
+
+%hr/
 #some_elems
