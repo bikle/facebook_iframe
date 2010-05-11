@@ -7,22 +7,23 @@
     %script(src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js" type="text/javascript")
   %body
     =render :partial => "layouts/some_css"
-    %hr/
-    %a(target="g" href="http://github.com/bikle/facebook_iframe")README on github.com
-    %br/
-    %a(target="_top" href="#{@application_base_url}/hello/index") app/views/hello/index.haml
-    (For some browsers, set scrollbars:
-    - if @scrollbar== false
-      %a(target="_top" href="#{@application_base_url}/hello/index?scrollbar=on") On
-    - else
-      %a(target="_top" href="#{@application_base_url}/hello/index?scrollbar=off") Off
-    )
-    %br/
-    %a(target="_top" href="#{@application_base_url}/misc/index") app/views/misc/index.haml
-    %br/
-    %a(target="_top" href="#{@application_base_url}/fql/index") app/views/fql/index.haml
-    %hr/
-    = yield
+    #div4yield
+      %hr/
+      %a(target="g" href="http://github.com/bikle/facebook_iframe")README on github.com
+      %br/
+      %a(target="_top" href="#{@application_base_url}/hello/index") app/views/hello/index.haml
+      (For some browsers, set scrollbars:
+      - if @scrollbar== false
+        %a(target="_top" href="#{@application_base_url}/hello/index?scrollbar=on") On
+      - else
+        %a(target="_top" href="#{@application_base_url}/hello/index?scrollbar=off") Off
+      )
+      %br/
+      %a(target="_top" href="#{@application_base_url}/misc/index") app/views/misc/index.haml
+      %br/
+      %a(target="_top" href="#{@application_base_url}/fql/index") app/views/fql/index.haml
+      %hr/
+      = yield
     %script(src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript")
     %script(type="text/javascript")
       window.onload = function () {
