@@ -1,0 +1,6 @@
+- fname= ffname.sub(/^.+\/app\/views\//,'')
+- myhref= "#{@application_base_url}/#{fname}".sub(/.haml/,'')
+-gitlink= "http://github.com/bikle/facebook_iframe/blob/master/app/views/#{fname}"
+%a(href= "#{gitlink}" target= "g")=gitlink
+%a(href= "#{myhref}" target= "_top")
+  %h1="app/views/#{fname}"
