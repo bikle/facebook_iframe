@@ -1,4 +1,4 @@
-%h1 app/views/misc/index.haml
+= render(:partial => "shared/page_top", :locals => {:ffname => __FILE__})
 Miscellaneous Demonstrations
 %hr/
 %a(href="#{@application_base_url}/misc/write2news_feed" target="_top")="#{@application_base_url}/misc/write2news_feed"

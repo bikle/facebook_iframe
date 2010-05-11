@@ -1,4 +1,13 @@
-%h1 app/views/misc/jquery_accordion.haml
+= render(:partial => "shared/page_top", :locals => {:ffname => __FILE__})
+
+This is a simple demonstration of how to put a jQuery widget (in this case, an "Accordion") into your Facebook App.
+%br/
+More info:
+%br/
+%a(target= "j" href= "http://jqueryui.com/demos/accordion/")
+  http://jqueryui.com/demos/accordion/
+%br/
+%br/
 
 :javascript
   $(document).ready(function() {

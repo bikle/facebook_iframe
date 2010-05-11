@@ -1,4 +1,5 @@
-%h1 app/views/misc/write2news_feed.haml
+= render(:partial => "shared/page_top", :locals => {:ffname => __FILE__})
+
 - if @facebooker_session_permissionerror
   %hr/
   %style(type="text/css")
