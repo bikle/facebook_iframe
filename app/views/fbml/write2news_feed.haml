@@ -1,0 +1,31 @@
+= render(:partial => "shared/page_top", :locals => {:ffname => __FILE__})
+
+- if @facebooker_session_permissionerror
+  %hr/
+  %style(type="text/css")
+    div.error_text {font-size:1.2em; font-weight:bold; color: red;}
+  .error_text
+    We have a Facebooker::Session::PermissionError.  We can fix this error by going to this URL:
+    %br/
+    %a(target="_top" href="http://apps.facebook.com/#{@canvas_page_name}/hello/permissions")
+      http://apps.facebook.com/#{@canvas_page_name}/hello/permissions
+  %hr/
+
+%fb:serverFbml(style="width: 444px;")
+  %script(type="text/fbml")
+    %fb:fbml
+      %form(target="_top" action="http://apps.facebook.com/#{@canvas_page_name}/fbml/write2news_feed")
+        %style(type="text/css")
+          span#friend_names_text {float: left;}
+          div.fb_mfi {float: right; }
+        %span#friend_names_text
+          Begin typing Friends Names here ->
+        .fb_mfi
+          %fb:multi-friend-input{:width => "222px"}
+        %br/
+        %br/
+        %br/
+        Write a short message for Friends News Feeds here ->
+        %input(type="text" name="msg4nf")
+        %br/
+        %input(type="submit")
