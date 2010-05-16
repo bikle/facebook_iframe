@@ -22,3 +22,11 @@ test:
   callback_url: http://bikle.net:3331/
   pretty_errors: true
   set_asset_host_to_callback_url: true
+
+production:
+  api_key: 3756b8c191faac9ac44082fd2cac997b
+  secret_key: 79d64b0a8fb94f0e528a74e91e9f51eb
+  canvas_page_name: ffbiframe
+  callback_url: http://ffbiframe.heroku.com/
+  pretty_errors: true
+  set_asset_host_to_callback_url: true
