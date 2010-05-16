@@ -25,8 +25,12 @@ class FqlController < ApplicationController
   end
 
   def ppage
-    @fql_query= "SELECT name FROM page WHERE page_id=95146358477"
-    @qry_output= @facebook_session.fql_query(@fql_query)
+    page_columns= "name, pic, type, website, band_members, hometown, current_location, booking_agent, fan_count"
+    @fql_query= "SELECT #{page_columns} FROM page WHERE page_id=95146358477"
+    @qry_output= @facebook_session.fql_query(@fql_query).first
+    @website=@qry_output.website
+    @name=@qry_output.name
+    @pic=@qry_output.pic
   end
 
 end
