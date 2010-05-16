@@ -1,0 +1,41 @@
+= render(:partial => "shared/page_top", :locals => {:ffname => __FILE__})
+%br/
+This is a simple demo which sends a query to the FQL table named "page".
+%br/
+The page table is wide:
+%br/
+%a(target="p" href="http://wiki.developers.facebook.com/index.php/Page_(FQL)")http://wiki.developers.facebook.com/index.php/Page_(FQL)
+%br/
+Here is the query behind this demo:
+%br/
+%br/
+=@fql_query
+%br/
+%br/
+Here is the call of the query:
+%br/
+@qry_output= @facebook_session.fql_query(fql_query).first
+%br/
+%br/
+Here is the output in YAML format:
+%br/
+=debug @qry_output
+%hr/
+%br/
+%br/
+With Rails it is easy to transform the query output into HTML elements.
+%br/
+%br/
+For example we can create an a-element from ...
+%br/
+%br/
+
+%br/
+%br/
+We can create an a-element from ...
+%br/
+%br/
+
+%br/
+%br/
+%hr/
